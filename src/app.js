@@ -9,7 +9,9 @@ app.use(morgan('dev'));
 app.use(helmet());
 app.use(compression);
 // Database connection
-
+require('./dbs/init.mongodb.js');
+// const { checkOverload } = require('./helpers/check.connect.js');
+// checkOverload();
 // Routes
 app.get('/', (req, res, next) => {
     return res.status(200).json({
