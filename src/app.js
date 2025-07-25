@@ -10,7 +10,7 @@ app.use(helmet());
 app.use(compression());
 
 // Initialize database connection
-
+require('./dbs/init.mongodb');
 // Initialize routes
 app.get('/', (req, res) => {
     res.send('Welcome to the E-commerce Backend API');
